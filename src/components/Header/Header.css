@@ -1,0 +1,7 @@
+.header-title h1::before {
+  content: "";
+  width: 30%;
+  height: 100%;
+  border-left: 2px solid rgb(56, 52, 52);
+  margin-right: 0.5rem;
+}

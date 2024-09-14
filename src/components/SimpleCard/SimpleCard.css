@@ -1,0 +1,11 @@
+.simple-card {
+  background-image: linear-gradient(to top, #221f1f, #4e4949);
+  text-align: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.simple-card .avatar {
+  border-color: #655f5f;
+  border-width: 2px;
+}

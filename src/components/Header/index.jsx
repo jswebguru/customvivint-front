@@ -1,4 +1,3 @@
-import React from "react";
 import { FaBars } from "react-icons/fa6";
 import "./Header.css";
 const Header = () => {
@@ -11,7 +10,7 @@ const Header = () => {
           </div>
         </div>
         <div className="flex items-center header-title">
-          <h1 className="text-sm font-bold">Home</h1>
+          <h1 className="text-lg font-bold">Home</h1>
         </div>
       </div>
       <div className="flex items-center text-gray-400">

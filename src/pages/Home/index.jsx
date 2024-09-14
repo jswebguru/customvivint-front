@@ -1,9 +1,10 @@
-import { React } from "react";
+import { SectionView } from "../../components/SectionView";
 
 const Home = () => {
   return (
-    <div className="home">
-      <h1 className="text-text-white">Custom Vivint</h1>
+    <div className="flex flex-col h-screen">
+      <SectionView />
+      <SectionView size={"large"} />
     </div>
   );
 };

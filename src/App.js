@@ -6,7 +6,7 @@ import Header from "./components/Header";
 function App() {
   return (
     <Router>
-      <div className="h-screen justify-center items-center bg-blue-500">
+      <div className="h-screen justify-center items-center bg-black">
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />

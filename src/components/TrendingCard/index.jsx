@@ -4,7 +4,7 @@ import { GrBarChart } from "react-icons/gr";
 
 const TrendingCard = ({ name = "Adam Kinkler" }) => {
   return (
-    <div className="trending-card-body rounded justify-start items-center inline-flex">
+    <div className="trending-card-body rounded justify-start items-center inline-flex z-0">
       <div className="relative flex-shrink-0 mr-4">
         <img
           className="w-[80px] h-[80px] rounded-full border-2 border-[#655f5f] object-cover"

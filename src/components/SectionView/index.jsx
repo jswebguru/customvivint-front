@@ -6,10 +6,15 @@ const SectionViewRow = ({
   size = "small",
   title = "Favorites",
   buttonTitle = "",
+  isNavbar = false,
   ...props
 }) => {
   return (
-    <div className="flex flex-col gap-3">
+    <div
+      className={`flex flex-col gap-3 w-full ${
+        isNavbar ? "header-navbar" : ""
+      }`}
+    >
       <SectionViewHeader title={title} buttonTitle={buttonTitle} />
       <SectionViewContentRow size={size} />
     </div>

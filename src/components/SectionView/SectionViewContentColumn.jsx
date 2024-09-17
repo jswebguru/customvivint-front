@@ -3,7 +3,7 @@ import "./style.css";
 
 const SectionViewContentColumn = ({ size = "small" }) => {
   return (
-    <div className="px-3 flex flex-col gap-[15px] relative">
+    <div className="px-3 flex flex-col gap-[15px]">
       <TrendingCard />
       <TrendingCard />
       <TrendingCard />

@@ -10,7 +10,6 @@
   transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   z-index: 1;
 }
@@ -20,16 +19,19 @@
 }
 
 .navbar-content {
-  background: rgb(221, 221, 221);
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
+  width: 100%;
+  flex: 1;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.navbar-content::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for better UX */
 }
 
 .navbar-menu-item-text {
   color: #9badb5;
   font-size: 10px;
-  font-weight: normal;
   font-family: "Albert Sans", sans-serif; /* Include a fallback font */
   line-height: 0.75rem; /* Convert to rem for better scalability */
 }
@@ -46,7 +48,7 @@
 .navbar .search-bar {
   width: 95%;
   max-width: 95%;
-  background-color: rgb(21 28 28 / 0.1);
+  background-color: rgba(21, 28, 28, 0.1);
 }
 
 .placeholder-black::placeholder {

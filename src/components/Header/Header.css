@@ -1,7 +1,17 @@
-.header-title h1::before {
-  content: "";
-  width: 30%;
-  height: 100%;
-  border-left: 2px solid rgb(56, 52, 52);
-  margin-right: 0.5rem;
+header {
+  z-index: 1000;
+}
+
+.header-title h1 {
+  color: white;
+  font-size: 24px;
+  line-height: 28.8px;
+  word-wrap: break-word;
+}
+
+.header-icon {
+  color: white;
+  font-size: 24px;
+  line-height: 28.8px;
+  word-wrap: break-word;
 }

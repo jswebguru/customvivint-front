@@ -1,0 +1,20 @@
+.section-view-content-row {
+  align-items: center;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.section-view-content-row::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for better UX */
+}
+
+.section-view-header {
+  color: white;
+}
+
+.section-view-header button {
+  color: #eab308;
+}
+
+.header-navbar .section-view-header * {
+  color: black;
+}

@@ -1,5 +1,26 @@
+#root {
+  height: 100%;
+}
+
+html,
+body {
+  height: 100%; /* Ensures the body takes the full height of the viewport */
+  margin: 0;
+  padding: 0;
+  background-color: black; /* Set the background color to black */
+  color: white; /* Set default text color to white for contrast */
+}
+
 .App {
+  min-height: 100vh;
+  background-color: black;
   text-align: center;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.App::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for better UX */
 }
 
 .App-logo {
@@ -35,4 +56,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap");
+
+.albert-sans-bold {
+  font-family: "Albert Sans", sans-serif;
+  font-weight: 700; /* 700 for Bold */
 }

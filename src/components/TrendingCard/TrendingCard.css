@@ -1,0 +1,36 @@
+.trending-card-body {
+  height: 111px;
+  background-color: #221f1f;
+  padding: 16px 12px;
+}
+
+.trending-card-content-category {
+  color: #a5a1a1;
+  font-size: 0.75rem; /* Assuming text-xs is 12px in Tailwind */
+  font-weight: 600; /* Equivalent to font-semibold in Tailwind */
+  font-family: "Albert Sans", sans-serif;
+  line-height: 14.4px;
+}
+
+.trending-card-content-title {
+  color: white;
+  font-size: 16px; /* Assuming text-base is 16px in Tailwind */
+  font-weight: 700; /* Equivalent to font-bold in Tailwind */
+  font-family: "Albert Sans", sans-serif;
+  line-height: 1.25; /* Equivalent to leading-tight in Tailwind */
+}
+
+.trending-card-content-content {
+  color: #e4e4e4;
+  font-size: 14px; /* Assuming text-sm is 14px in Tailwind */
+  font-family: "Albert Sans", sans-serif;
+  line-height: 16.8px;
+}
+
+.trending-card-content-content.medium {
+  font-weight: 500;
+}
+
+.trending-card-content-content.bold {
+  font-weight: 700;
+}

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap");
+
 #root {
   height: 100%;
 }
@@ -56,11 +58,4 @@ body {
   to {
     transform: rotate(360deg);
   }
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap");
-
-.albert-sans-bold {
-  font-family: "Albert Sans", sans-serif;
-  font-weight: 700; /* 700 for Bold */
 }

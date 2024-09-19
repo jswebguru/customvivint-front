@@ -35,7 +35,7 @@ export function AccordionItem({ children, value, trigger, ...props }) {
       <header
         role="button"
         onClick={() => setSelected(open ? null : value)}
-        className={`flex justify-between items-center px-3 py-3.5 text-lg font-semibold font-['Albert Sans'] leading-snug ${
+        className={`flex justify-between items-center px-3 py-3.5 text-lg font-semibold font-albert  leading-snug ${
           open ? "border-b border-[#a3a3a3]" : ""
         }`}
       >
@@ -50,7 +50,7 @@ export function AccordionItem({ children, value, trigger, ...props }) {
         style={{ height: open ? ref.current?.offsetHeight || 0 : 0 }}
       >
         <div
-          className="accordion-item text-base font-semibold font-['Albert Sans'] leading-tight"
+          className="accordion-item text-base font-semibold font-albert leading-tight"
           ref={ref}
         >
           {children}

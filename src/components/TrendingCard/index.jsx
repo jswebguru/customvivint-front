@@ -4,7 +4,7 @@ import { GrBarChart } from "react-icons/gr";
 
 const TrendingCard = ({ name = "Adam Kinkler" }) => {
   return (
-    <div className="trending-card-body rounded justify-start items-center inline-flex z-0">
+    <div className="trending-card-body font-albert rounded justify-start items-center inline-flex z-0">
       <div className="relative flex-shrink-0 mr-4">
         <img
           className="w-[80px] h-[80px] rounded-full border-2 border-[#655f5f] object-cover"
@@ -20,9 +20,11 @@ const TrendingCard = ({ name = "Adam Kinkler" }) => {
           Monthly Sales Standing
         </div>
         <div className="trending-card-content-title">REGION {name}</div>
-        <div className="trending-card-content-content medium">
+        <div className="trending-card-content-content font-medium">
           Leading the way this month with{" "}
-          <span className=".trending-card-content-content bold">230 sales</span>
+          <span className=".trending-card-content-content font-bold">
+            230 sales
+          </span>
           .
         </div>
       </div>

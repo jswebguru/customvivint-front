@@ -10,6 +10,9 @@ module.exports = {
           white: "#ffffff",
         },
       },
+      fontFamily: {
+        albert: ["Albert Sans", "sans-serif"],
+      },
     },
   },
   // plugins: [require("daisyui")],

@@ -1,0 +1,22 @@
+.checkbox {
+  appearance: none;
+  background-color: rgba(169, 150, 85, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.125rem;
+  cursor: pointer;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.checkbox:checked {
+  border-color: #a99655;
+}
+
+.checkbox:checked::after {
+  content: "\2714"; /* Unicode for checkmark */
+  display: block;
+  text-align: center;
+  color: #a99655;
+  font-size: 1rem;
+  line-height: 1rem;
+}

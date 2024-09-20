@@ -11,7 +11,7 @@ const Modal = ({ isOpen, onClose, title, subtitle, onSave, children }) => {
       } items-end md:items-center justify-center overflow-hidden`}
     >
       <div
-        className={`bg-black bg-opacity-50 fixed inset-0`}
+        className={`bg-black bg-opacity-50 fixed inset-0 w-full`}
         onClick={onClose}
       ></div>
       <div

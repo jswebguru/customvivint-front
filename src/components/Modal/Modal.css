@@ -1,5 +1,5 @@
 .close-button {
-  color: white;
+  color: var(--color-text-primary);
   font-size: 2.5rem;
   line-height: 2.5rem;
 }

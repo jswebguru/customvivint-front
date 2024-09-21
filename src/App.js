@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 import "./App.css";
 import Header from "./components/Header";
-import Navbar from "./components/Navbar";
+import { changeTheme } from "./utils/helper";
+const Navbar = lazy(() => import("./components/Navbar"));
+const Home = lazy(() => import("./pages/Home"));
 
 function App() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -14,18 +15,22 @@ function App() {
     } else if (typeof window != "undefined" && window.document) {
       document.body.style.overflow = "hidden";
     }
-
     setIsDrawerOpen(!isDrawerOpen);
+    changeTheme("theme3");
   };
 
   return (
     <Router>
-      <div className="h-screen justify-center items-center bg-black">
+      <div className="h-screen justify-center items-center bg-background-primary">
         <Header onOpenDrawer={handleOpenDrawer} />
-        <Navbar isOpen={isDrawerOpen} />
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-        </Routes>
+        <Suspense>
+          <Navbar isOpen={isDrawerOpen} />
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+          </Routes>
+        </Suspense>
       </div>
     </Router>
   );

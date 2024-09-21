@@ -9,7 +9,7 @@ const ItemList = ({ initialItems }) => {
   };
 
   return (
-    <div className="px-3">
+    <div className="px-3 gap-1 favorite-item-list">
       {items.map((item) => (
         <Item key={item.id} item={item} onDelete={handleDelete} />
       ))}

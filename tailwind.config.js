@@ -6,8 +6,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        background: {
+          primary: "var(--color-background-primary)",
+          secondary: "var(--color-background-secondary)",
+        },
+        button: {
+          primary: "var(--color-button-primary)",
+          secondary: "var(--color-button-secondary)",
+        },
         text: {
-          white: "#ffffff",
+          primary: "var(--color-text-primary)",
+          secondary: "var(--color-text-secondary)",
+          tertiary: "var(--color-text-tertiary)",
+          button: "var(--color-text-button)",
         },
       },
       fontFamily: {

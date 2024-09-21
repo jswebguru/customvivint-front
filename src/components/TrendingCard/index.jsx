@@ -11,7 +11,7 @@ const TrendingCard = ({ name = "Adam Kinkler" }) => {
           src={defaultImage}
           alt="Profile"
         />
-        <span className="color-white bg-[#c2b485] absolute bottom-0 right-0 flex items-center justify-center w-6 h-6 rounded-full">
+        <span className="color-white bg-button-primary absolute bottom-0 right-0 flex items-center justify-center w-6 h-6 rounded-full">
           <GrBarChart />
         </span>
       </div>

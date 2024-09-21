@@ -5,6 +5,9 @@ const initialItems = [
   { id: 1, text: "Item 1", checked: false },
   { id: 2, text: "Item 2", checked: true },
   { id: 3, text: "Item 3", checked: false },
+  { id: 4, text: "Item 3", checked: false },
+  { id: 5, text: "Item 3", checked: false },
+  { id: 6, text: "Item 3", checked: false },
 ];
 const SectionViewHeader = ({ title = "Favorites", buttonTitle = "" }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

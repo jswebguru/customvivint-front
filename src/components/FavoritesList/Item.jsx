@@ -9,7 +9,7 @@ const Item = ({ item, onDelete }) => {
   };
 
   return (
-    <div className="flex items-center justify-between px-2 py-3 gap-3 text-white">
+    <div className="flex items-center justify-between px-2 py-3 gap-3 text-text-primary favorite-item">
       <div className="flex items-center gap-3">
         <input
           type="checkbox"
@@ -22,8 +22,8 @@ const Item = ({ item, onDelete }) => {
           src={defaultImage}
           alt="Profile"
         />
-        <div className="text-white text-base font-semibold font-['Plus Jakarta Sans'] leading-tight">
-          Adam Kinkler
+        <div className=" text-base font-semibold font-['Plus Jakarta Sans'] leading-tight">
+          {item.text}
         </div>
       </div>
       <button onClick={() => onDelete(item.id)} className="w-4 h-4">

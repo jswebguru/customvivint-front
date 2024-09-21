@@ -9,13 +9,15 @@ body {
   height: 100%; /* Ensures the body takes the full height of the viewport */
   margin: 0;
   padding: 0;
-  background-color: black; /* Set the background color to black */
+  background-color: var(
+    --color-background-primary
+  ); /* Set the background color to black */
   color: white; /* Set default text color to white for contrast */
 }
 
 .App {
   min-height: 100vh;
-  background-color: black;
+  background-color: var(--color-background-primary);
   text-align: center;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;

@@ -1,0 +1,10 @@
+html[data-theme="theme4"] {
+  --color-background-primary: #2a2a2a;
+  --color-background-secondary: #1f1f1f;
+  --color-button-primary: #da0000;
+  --color-button-secondary: #5eb525;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #fafafa;
+  --color-text-tertiary: #da0000;
+  --color-text-button: #000000;
+}

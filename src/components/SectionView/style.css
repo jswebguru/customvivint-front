@@ -8,11 +8,11 @@
 }
 
 .section-view-header {
-  color: white;
+  color: var(--color-text-primary);
 }
 
 .section-view-header button {
-  color: #eab308;
+  color: var(--color-text-tertiary);
 }
 
 .header-navbar .section-view-header * {

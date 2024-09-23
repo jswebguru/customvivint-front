@@ -2,7 +2,7 @@ import { useState, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
-import { changeTheme } from "./utils/helper";
+import { ThemeProvider } from "./contexts/ThemeContext";
 const Navbar = lazy(() => import("./components/Navbar"));
 const Home = lazy(() => import("./pages/Home"));
 
@@ -16,23 +16,24 @@ function App() {
       document.body.style.overflow = "hidden";
     }
     setIsDrawerOpen(!isDrawerOpen);
-    changeTheme("theme3");
   };
 
   return (
-    <Router>
-      <div className="h-screen justify-center items-center bg-background-primary">
-        <Header onOpenDrawer={handleOpenDrawer} />
-        <Suspense>
-          <Navbar isOpen={isDrawerOpen} />
-        </Suspense>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-          </Routes>
-        </Suspense>
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <div className="h-screen justify-center items-center bg-background-primary">
+          <Header onOpenDrawer={handleOpenDrawer} />
+          <Suspense>
+            <Navbar isOpen={isDrawerOpen} />
+          </Suspense>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+            </Routes>
+          </Suspense>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

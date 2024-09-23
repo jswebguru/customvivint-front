@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Modal from "../Modal";
+import { BasicModal } from "../Modal";
 import ItemList from "../FavoritesList";
 const initialItems = [
   { id: 1, text: "Item 1", checked: false },
@@ -43,7 +43,7 @@ const SectionViewHeader = ({ title = "Favorites", buttonTitle = "" }) => {
           <></>
         )}
       </div>
-      <Modal
+      <BasicModal
         isOpen={isModalOpen}
         onClose={closeModal}
         title="Edit Favourites"
@@ -51,7 +51,7 @@ const SectionViewHeader = ({ title = "Favorites", buttonTitle = "" }) => {
         onSave={handleSave}
       >
         <ItemList initialItems={initialItems} />
-      </Modal>
+      </BasicModal>
     </>
   );
 };

@@ -2,7 +2,7 @@ import "./TrendingCard.css";
 import defaultImage from "../../assets/download.png";
 import { GrBarChart } from "react-icons/gr";
 
-const TrendingCard = ({ name = "Adam Kinkler" }) => {
+const TrendingCard = ({ heading, title, description }) => {
   return (
     <div className="trending-card-body font-albert rounded justify-start items-center inline-flex z-0">
       <div className="relative flex-shrink-0 mr-4">
@@ -17,11 +17,11 @@ const TrendingCard = ({ name = "Adam Kinkler" }) => {
       </div>
       <div className="flex flex-col gap-1">
         <div className="trending-card-content-category uppercase">
-          Monthly Sales Standing
+          {heading}
         </div>
-        <div className="trending-card-content-title">REGION {name}</div>
+        <div className="trending-card-content-title">{title}</div>
         <div className="trending-card-content-content font-medium">
-          Leading the way this month with{" "}
+          {description}
           <span className=".trending-card-content-content font-bold">
             230 sales
           </span>

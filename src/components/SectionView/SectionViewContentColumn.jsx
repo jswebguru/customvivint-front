@@ -1,12 +1,12 @@
 import TrendingCard from "../TrendingCard";
 import "./style.css";
 
-const SectionViewContentColumn = ({ size = "small" }) => {
+const SectionViewContentColumn = ({ size = "small", content }) => {
   return (
     <div className="px-3 flex flex-col gap-[15px]">
-      <TrendingCard />
-      <TrendingCard />
-      <TrendingCard />
+      {content?.map((item, index) => (
+        <TrendingCard key={index} {...item} />
+      ))}
       <div className="items-center flex flex-row gap-2 justify-center">
         <button
           type="button"

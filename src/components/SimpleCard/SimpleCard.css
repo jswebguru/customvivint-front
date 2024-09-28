@@ -1,4 +1,5 @@
 .simple-card.small {
+  width: 80px;
   height: 123px;
   background-image: linear-gradient(to top, #221f1f, #4e4949);
 }

@@ -51,7 +51,7 @@ const ThemeSelectionModal = ({ isOpen, onClose, title, subtitle }) => {
             themeTitle="EARTHY TONES"
           />
         </div>
-        <div className="flex justify-end p-4 gap-4 items-center justify-center">
+        <div className="flex p-4 gap-4 items-center justify-center">
           <button
             onClick={() => changeTheme(selectedTheme)}
             className="basis-3/4 w-[120px] h-10 px-3.5 py-1 bg-button-primary rounded-[10px] text-neutral-50 text-sm font-semibold font-albert leading-[16.80px]"

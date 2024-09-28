@@ -4,23 +4,23 @@ import { SimpleCardLarge, SimpleCardSmall } from "../SimpleCard";
 const CARD = [
   "Adam K.",
   "Production Report",
-  "David Ritchie",
-  "Best Report",
   "Adam K.",
-  "Production",
+  "Production Report",
+  "Adam K.",
+  "Production Report",
 ];
-const SectionViewContentRow = ({ size = "small" }) => {
+const SectionViewContentRow = ({ size = "small", content }) => {
   return (
     <div
       className={`section-view-content-row flex flex-row text-white px-3 ${
         size === "small" ? "gap-3" : "gap-4"
       }`}
     >
-      {CARD.map((index, title) =>
+      {content?.map((item, index) =>
         size === "small" ? (
-          <SimpleCardSmall title={title} key={title + index} />
+          <SimpleCardSmall title={item.title} key={item.title + index} />
         ) : (
-          <SimpleCardLarge title={title} key={title + index} />
+          <SimpleCardLarge title={item.title} key={item.title + index} />
         )
       )}
     </div>

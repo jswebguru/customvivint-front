@@ -11,7 +11,7 @@ const SimpleCardSmall = ({ title = "Adam K." }) => {
       <div className="avatar">
         <img className="avatar" src={defaultImage} alt="Profile" />
       </div>
-      <div className="profile-name">Production Report</div>
+      <div className="profile-name">{title}</div>
     </div>
   );
 };
@@ -26,7 +26,7 @@ const SimpleCardLarge = ({ title = "Adam K." }) => {
       <div className="avatar mx-2">
         <img className="avatar" src={defaultImage} alt="Profile" />
       </div>
-      <div className="profile-name">Vivint Premier League</div>
+      <div className="profile-name">{title}</div>
     </div>
   );
 };

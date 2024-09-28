@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useQuery } from "react-query";
 import FloatingButton from "../../components/FloatingButton";
 import apiClient from "../../lib/api-client";
@@ -6,8 +7,25 @@ import {
   SectionViewReport,
   SectionViewRow,
 } from "../../components/SectionView";
+import Chat from "../../components/Chat";
 
 const Home = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const handleOpenChat = () => {
+    if (isChatOpen) {
+      document.body.style.overflow = "unset";
+    } else if (typeof window != "undefined" && window.document) {
+      document.body.style.overflow = "hidden";
+    }
+    setIsChatOpen(!isChatOpen);
+  };
+
+  const handleCloseChat = () => {
+    setIsChatOpen(false);
+    document.body.style.overflow = "unset";
+  };
+
   const { data, isLoading, isError, error } = useQuery("todos", fetchHomeData, {
     retry: false, // Disable retrying on failure
   });
@@ -17,6 +35,7 @@ const Home = () => {
   return (
     <div>
       <div className="flex flex-col h-screen py-6 gap-4">
+        <Chat isOpen={isChatOpen} onClose={handleCloseChat} />
         <SectionViewRow
           title="Fvorites"
           buttonTitle="Edit"
@@ -35,7 +54,7 @@ const Home = () => {
         <SectionViewReport title="Production Report" />
         <SectionViewReport title="Report #2" />
       </div>
-      <FloatingButton />
+      <FloatingButton onOpenChat={handleOpenChat} />
     </div>
   );
 };

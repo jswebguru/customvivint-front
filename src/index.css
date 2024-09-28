@@ -15,3 +15,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@layer base {
+  html {
+    --color-background-primary: #000000;
+    --color-background-secondary: #151c1c;
+    --color-button-primary: #a99655;
+    --color-button-secondary: #fafafa;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #fafafa;
+    --color-text-tertiary: #a99655;
+    --color-text-button: #3e5463;
+  }
+  @import "contexts/themes/theme1.css";
+  @import "contexts/themes/theme2.css";
+  @import "contexts/themes/theme3.css";
+  @import "contexts/themes/theme4.css";
+}

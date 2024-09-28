@@ -20,6 +20,7 @@
 
 .navbar-content {
   width: 100%;
+  max-height: calc(100% - 70px);
   flex: 1;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -53,4 +54,8 @@
 
 .placeholder-black::placeholder {
   color: black;
+}
+
+.navbar-menu {
+  height: 70px;
 }

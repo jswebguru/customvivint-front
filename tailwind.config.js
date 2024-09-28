@@ -6,9 +6,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        text: {
-          white: "#ffffff",
+        background: {
+          primary: "var(--color-background-primary)",
+          secondary: "var(--color-background-secondary)",
         },
+        button: {
+          primary: "var(--color-button-primary)",
+          secondary: "var(--color-button-secondary)",
+        },
+        text: {
+          primary: "var(--color-text-primary)",
+          secondary: "var(--color-text-secondary)",
+          tertiary: "var(--color-text-tertiary)",
+          button: "var(--color-text-button)",
+        },
+      },
+      fontFamily: {
+        albert: ["Albert Sans", "sans-serif"],
       },
     },
   },

@@ -2,45 +2,60 @@ name: Deploy Frontend to Droplet
 
 on:
   push:
-    branches: [main]
-  # pull_request:
-  #   branches: [main]
-  # workflow_dispatch:
-  #   branches: [main]
+    branches:
+      - main
+      - develop
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      # Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
+      # Setup git config
       - name: setup git config
         run: |
-          git config user.name "Github Actions Bot"
+          git config user.name "Github Actions Bot"  
           git config user.email "<>"
 
+      # Install dependencies
       - name: Install Dependencies
         run: npm install --force
 
+      # Log in to Docker Hub
       - name: Log in to Docker Hub
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 
+      # Build Docker image
       - name: Build Docker Image
-        run: docker build --tag customvivint-front .
+        run: |
+          if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then  
+            docker build --tag customvivint-front .  
+            docker tag customvivint-front ${{ secrets.DOCKERHUB_USERNAME }}/customvivint-front:latest  
+          elif [[ ${{ github.ref }} == 'refs/heads/develop' ]]; then  
+            docker build --tag customvivint-front-staging .  
+            docker tag customvivint-front-staging ${{ secrets.DOCKERHUB_USERNAME }}/customvivint-front-staging:latest  
+          fi
 
-      - name: Tag image
-        run: docker tag customvivint-front ${{ secrets.DOCKERHUB_USERNAME }}/customvivint-front:latest
-
+      # Push Docker image
       - name: Push Docker Image
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/customvivint-front:latest
+        run: |
+          if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then  
+            docker push ${{ secrets.DOCKERHUB_USERNAME }}/customvivint-front:latest  
+          elif [[ ${{ github.ref }} == 'refs/heads/develop' ]]; then  
+            docker push ${{ secrets.DOCKERHUB_USERNAME }}/customvivint-front-staging:latest  
+          fi
 
+      # SSH to Droplet and Update Container
       - name: SSH to Droplet and Update Container
         uses: appleboy/ssh-action@master
         with:
@@ -49,7 +64,14 @@ jobs:
           password: ${{ secrets.DROPLET_PASSWORD }}
           port: 22
           script: |
-            docker stop customvivint-front || true
-            docker rm customvivint-front || true
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/customvivint-front:latest
-            docker run -d --name customvivint-front -p 3000:80 ${{ secrets.DOCKERHUB_USERNAME }}/customvivint-front:latest
+            if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then  
+              docker stop customvivint-front || true  
+              docker rm customvivint-front || true  
+              docker pull ${{ secrets.DOCKERHUB_USERNAME }}/customvivint-front:latest  
+              docker run -d --name customvivint-front -p 3000:80 ${{ secrets.DOCKERHUB_USERNAME }}/customvivint-front:latest  
+            elif [[ ${{ github.ref }} == 'refs/heads/develop' ]]; then  
+              docker stop customvivint-front-staging || true  
+              docker rm customvivint-front-staging || true  
+              docker pull ${{ secrets.DOCKERHUB_USERNAME }}/customvivint-front-staging:latest  
+              docker run -d --name customvivint-front-staging -p 3001:80 ${{ secrets.DOCKERHUB_USERNAME }}/customvivint-front-staging:latest  
+            fi

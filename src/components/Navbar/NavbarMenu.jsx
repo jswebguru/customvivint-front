@@ -8,7 +8,7 @@ const NavbarMenu = () => {
     <div className="w-full fixed bottom-0 left-0 px-3 py-4 flex flex-row bg-black justify-center gap-1 ">
       <NavbarMenuItem isActive={true} menuItemIcon={<MdHomeFilled />} />
       <NavbarMenuItem
-        menuItemTitle="Competitoins"
+        menuItemTitle="Competitions"
         menuItemIcon={<FaRegCompass />}
       />
       <NavbarMenuItem

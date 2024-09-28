@@ -7,6 +7,7 @@ const SectionViewRow = ({
   title = "Favorites",
   buttonTitle = "",
   isNavbar = false,
+  content = null,
   ...props
 }) => {
   return (
@@ -16,7 +17,7 @@ const SectionViewRow = ({
       }`}
     >
       <SectionViewHeader title={title} buttonTitle={buttonTitle} />
-      <SectionViewContentRow size={size} />
+      <SectionViewContentRow size={size} content={content} />
     </div>
   );
 };
@@ -24,12 +25,13 @@ const SectionViewRow = ({
 const SectionViewColumn = ({
   title = "Favorites",
   buttonTitle = "",
+  content = null,
   ...props
 }) => {
   return (
     <div className="flex flex-col gap-3">
       <SectionViewHeader title={title} buttonTitle={buttonTitle} />
-      <SectionViewContentColumn />
+      <SectionViewContentColumn content={content} />
     </div>
   );
 };

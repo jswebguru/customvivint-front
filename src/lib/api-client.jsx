@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: process.env.API_URL,
+  // baseURL: process.env.REACT_APP_API_URL,
+  baseURL: "https://custom-vivint-backend.graphgenie.app/api/v1",
   headers: {
     "Content-Type": "application/json",
   },

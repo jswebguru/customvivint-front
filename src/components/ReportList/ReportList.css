@@ -1,3 +1,11 @@
 .accordion-item .item-list * {
-  padding: 8px 24px;
+  padding: 8px 12px;
+}
+
+.accordion-item {
+  padding-left: 12px;
+}
+
+.accordion-item header {
+  background-color: white !important;
 }

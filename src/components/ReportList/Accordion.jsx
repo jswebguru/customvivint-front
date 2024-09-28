@@ -21,9 +21,24 @@ export default function Accordion({ children, value, onChange, ...props }) {
 
 export function AccordionItem({ children, value, trigger, ...props }) {
   const { selected, setSelected } = useContext(AccordionContext);
-
   const open = selected === value;
-  const ref = useRef(null);
+  const contentRef = useRef(null);
+  const innerRef = useRef(null);
+  const [height, setHeight] = useState(0);
+
+  useEffect(() => {
+    if (contentRef.current && innerRef.current) {
+      setHeight(open ? innerRef.current.scrollHeight : 0);
+      const resizeObserver = new ResizeObserver(() => {
+        if (open) setHeight(innerRef.current.scrollHeight);
+      });
+      resizeObserver.observe(innerRef.current);
+
+      return () => {
+        resizeObserver.disconnect();
+      };
+    }
+  }, [open, children]);
 
   return (
     <li
@@ -35,7 +50,7 @@ export function AccordionItem({ children, value, trigger, ...props }) {
       <header
         role="button"
         onClick={() => setSelected(open ? null : value)}
-        className={`flex justify-between items-center px-3 py-3.5 text-lg font-semibold font-albert  leading-snug ${
+        className={`flex justify-between items-center px-3 py-3.5 text-lg font-semibold font-albert leading-snug ${
           open ? "border-b border-[#a3a3a3]" : ""
         }`}
       >
@@ -46,12 +61,13 @@ export function AccordionItem({ children, value, trigger, ...props }) {
         />
       </header>
       <div
-        className="overflow-y-hidden transition-all"
-        style={{ height: open ? ref.current?.offsetHeight || 0 : 0 }}
+        ref={contentRef}
+        className="accordion-item overflow-hidden transition-all"
+        style={{ height }}
       >
         <div
-          className="accordion-item text-base font-semibold font-albert leading-tight"
-          ref={ref}
+          ref={innerRef}
+          className="text-base font-semibold font-albert leading-tight"
         >
           {children}
         </div>

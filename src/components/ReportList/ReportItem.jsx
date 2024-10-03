@@ -6,10 +6,17 @@ const ReportItem = ({ item }) => {
     return (
       <AccordionItem value={item.id} trigger={item.title}>
         <Accordion>
-          {item.childs &&
+          {item.childs && item.childs.length > 0 ? (
             item.childs.map((child) => (
               <ReportItem key={child.id} item={child} />
-            ))}
+            ))
+          ) : (
+            <div className="p-3">
+              <p className="text-base font-semibold font-albert leading-tight">
+                No report
+              </p>
+            </div>
+          )}
         </Accordion>
       </AccordionItem>
     );

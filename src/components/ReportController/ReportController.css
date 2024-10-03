@@ -1,0 +1,26 @@
+.select {
+  border-right: 10px solid transparent;
+}
+
+.floating-button {
+  height: 45px;
+  padding: 1rem;
+  background-color: var(--color-button-primary);
+  box-shadow: 0 0 0.75rem var(--color-button-primary);
+}
+
+.badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: -0.25rem;
+  margin-right: -0.25rem;
+  color: white;
+  border-radius: 9999px;
+  width: 8px;
+  height: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-button-primary);
+}

@@ -38,7 +38,7 @@
 }
 
 .navbar-menu-item-text.active {
-  color: #a99655;
+  color: var(--color-text-tertiary);
 }
 
 .navbar-menu-item-text .icon {

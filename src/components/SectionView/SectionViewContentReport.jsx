@@ -7,7 +7,7 @@ const SectionViewContentReport = () => {
       <div>abcd</div>
       <button
         className="bg-button-primary text-white py-2 px-4 rounded-md font-albert"
-        onClick={() => navigate("/temp")}
+        onClick={() => navigate("/temp/0")}
       >
         View Full Report
       </button>

@@ -37,7 +37,7 @@ function App() {
             <Suspense>
               <Routes>
                 <Route exact path="/" element={<Home />} />
-                <Route exact path="/temp" element={<FullReport />} />
+                <Route exact path="/temp/:id" element={<FullReport />} />
                 <Route path="*" element={<PageNotFound />} />
               </Routes>
             </Suspense>

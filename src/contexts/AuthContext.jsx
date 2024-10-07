@@ -6,10 +6,17 @@ const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({ email: "t.sokac89@gmail.com" });
   const { value, setItem, getItem, removeItem } = useLocalStorage();
+  const [headerState, setHeaderState] = useState({
+    title: "Curator",
+    favoritesIcon: null,
+    dateRangeComponent: null,
+  });
   const navigate = useNavigate();
 
   return (
-    <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user, headerState, setHeaderState }}>
+      {children}
+    </AuthContext.Provider>
   );
 };
 

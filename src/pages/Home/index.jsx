@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useQuery } from "react-query";
 import FloatingButton from "../../components/FloatingButton";
+import { useAuth } from "../../contexts/AuthContext";
 import apiClient from "../../lib/api-client";
 import {
   SectionViewColumn,
@@ -11,6 +12,15 @@ import Chat from "../../components/Chat";
 
 const Home = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const { setHeaderState } = useAuth();
+
+  useEffect(() => {
+    setHeaderState({
+      title: "Home",
+      favoritesIcon: null,
+      dateRangeComponent: null,
+    });
+  }, [setHeaderState]);
 
   const handleOpenChat = () => {
     if (isChatOpen) {

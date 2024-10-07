@@ -17,7 +17,6 @@ const Navbar = ({ isOpen, onClose }) => {
         console.error("Error fetching sidebar data:", error);
       }
     };
-
     fetchSidebarData();
   }, []);
 

@@ -1,6 +1,16 @@
+import { useEffect } from "react";
 import ReportController from "../../components/ReportController";
-
+import { useAuth } from "../../contexts/AuthContext";
 const FullReport = () => {
+  const { setHeaderState } = useAuth();
+  useEffect(() => {
+    setHeaderState({
+      title: "Report: ",
+      favoritesIcon: true,
+      calendarComponent: true,
+      dateRange: "Last Month",
+    });
+  }, [setHeaderState]);
   //   const [isChatOpen, setIsChatOpen] = useState(false);
 
   //   const handleOpenChat = () => {

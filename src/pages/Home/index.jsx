@@ -17,8 +17,8 @@ const Home = () => {
   useEffect(() => {
     setHeaderState({
       title: "Home",
-      favoritesIcon: null,
-      dateRangeComponent: null,
+      favoritesIcon: false,
+      calendarComponent: false,
     });
   }, [setHeaderState]);
 

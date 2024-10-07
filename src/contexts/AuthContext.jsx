@@ -8,8 +8,8 @@ const AuthProvider = ({ children }) => {
   const { value, setItem, getItem, removeItem } = useLocalStorage();
   const [headerState, setHeaderState] = useState({
     title: "Curator",
-    favoritesIcon: null,
-    dateRangeComponent: null,
+    favoritesIcon: false,
+    calendarComponent: false,
   });
   const navigate = useNavigate();
 
